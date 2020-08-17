@@ -68,7 +68,7 @@ seguintes propriedades (os valores devem ser do tipo mostrado abaixo):
 - `assentos` - Number - cinco por padrão
 - `quantidadePessoas` - Number - zero por padrão
 */
-> var carro = {marca: 'Ford', modelo: 'Ka', placa: 'AER-5687', ano: 2007, assentos: 5, quantidadePessoas: 0};
+> var carro = {marca: 'Ford', modelo: 'Ka', placa: 'AER-5687', ano: 2007,cor: 'preta', quantasPortas: 5, assentos: 5, quantidadePessoas: 0};
 
 /*
 Crie um método chamado `mudarCor` que mude a cor do carro conforme a cor
