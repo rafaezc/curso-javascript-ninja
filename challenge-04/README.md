@@ -81,7 +81,7 @@ passado por parâmetro.
 /*
 Crie um método chamado `obterCor`, que retorne a cor do carro.
 */
-> carro.obterCor2 = function() {
+> carro.obterCor = function() {
 ... return carro.cor;
 ... }
 
@@ -123,7 +123,8 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 "Só cabem mais [QUANTIDADE_DE_PESSOAS_QUE_CABEM] pessoas!"
 - Se couber somente mais uma pessoa, mostrar a palavra "pessoa" no retorno
 citado acima, no lugar de "pessoas".
-*/}
+*/
+
 
 /*
 Agora vamos verificar algumas informações do carro. Para as respostas abaixo,
@@ -133,28 +134,28 @@ retornar algum valor.
 
 Qual a cor atual do carro?
 */
-?
+> carro.obterCor(); //'preta'
 
 // Mude a cor do carro para vermelho.
-?
+> carro.mudaCor('vermelha');
 
 // E agora, qual a cor do carro?
-?
+> carro.obterCor(); //'vermelha'
 
 // Mude a cor do carro para verde musgo.
-?
+> carro.mudaCor('verde_musgo');
 
 // E agora, qual a cor do carro?
-?
+> carro.obterCor(); //'verde_musgo'
 
 // Qual a marca e modelo do carro?
-?
+> carro.obterMarcaModelo(); //'Esse carro é um Ford Ka.'
 
 // Adicione 2 pessoas no carro.
-?
+> carro.addPessoas(2); //'Já temos 2 pessoa(s) no carro!'
 
 // Adicione mais 4 pessoas no carro.
-?
+
 
 // Faça o carro encher.
 ?
