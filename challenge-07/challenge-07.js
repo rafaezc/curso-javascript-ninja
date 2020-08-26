@@ -60,7 +60,7 @@ pares entre 10 e 20, inclusive esses 2.
 Na mesma ideia do exercício acima: mostre agora os números ímpares.
 */
   > while (numeros < 20) {
-... if (numeros % 2 != 0) {
+... if (numeros % 2 !== 0) {
 ..... console.log('Números ímpares entre 10 e 20: ' + numeros);
 ..... }
 ... numeros++;
@@ -79,7 +79,7 @@ Só vamos mudar o range:
 ... }
 
 > for (numeros = 111; numeros <= 125; numeros++) {
-... if (numeros % 2 != 0) {
+... if (numeros % 2 !== 0) {
 ..... console.log('Números ímpares entre 111 e 125: ' + numeros);
 ..... }
 ... }
