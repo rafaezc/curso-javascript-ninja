@@ -1,3 +1,5 @@
+(function () {
+  'use strict';
 /*
 1. Envolva todo o conteúdo desse desafio em uma IIFE.
 2. Adicione a diretiva 'use strict';
@@ -13,8 +15,11 @@ Ex: no caso do nome ser "Fernando", deve mostrar as frases:
 - "e é a 2ª letra do meu nome."
 E assim por diante, até a última.
 */
-console.log( 'As letras do seu nome:' );
-// ?
+> console.log( 'As letras do seu nome:' );
+> var name = 'Rafael';
+> for(var j = 0; j < name.length; j++) {
+... console.log(name[j] + ' é a ' + (j + 1) + 'ª letra do meu nome.');
+... }
 
 /*
 - Declare uma variável chamada `fullName`, que receba seu nome completo,
@@ -28,8 +33,14 @@ curso para fazer isso funcionar corretamente :)
 - Mostre no console o nome no formato slug, e o resultado final. Use um
 console.log para cada formato.
 */
-console.log( '\nNome convertido à partir de um slug:' );
-// ?
+> console.log( '\nNome convertido à partir de um slug:' );
+> var fullName = 'rafael-estevan-zubiolo-cavalaro';
+> var newFullName = fullName.split('-').map(function(name) {
+... return name[0].toUpperCase() + name.slice(1);
+... }).join(' ');
+  
+> console.log(fullName);
+> console.log(newFullName);
 
 /*
 - Crie um array com 5 nomes. Reduza esses nomes a uma única string, separando
@@ -40,9 +51,14 @@ O resultado final deve ficar mais ou menos assim:
 - Detalhe: o código abaixo deve funcionar com um array de qualquer tamanho.
 5 nomes foi somente uma sugestão ;)
 */
-console.log( '\nMeus amigos:' );
-// ?
-
+> console.log( '\nMeus amigos:' );
+> var amigos = ['João', 'Maria', 'Roberto', 'Pedro', 'Marcos'];
+> var newAmigos = amigos.reduce(function(acum, atual, index) {
+... var pontuacao = amigos.length - 1 === index ? ' e ' : ', ';
+... return acum + pontuacao + atual;
+... });
+> console.log(newAmigos);
+  
 /*
 Usando o replace(), faça a string "Roberto" virar "Roberta".
 Mostre o resultado no console.
@@ -68,3 +84,4 @@ Ex.: Nomes que deveriam funcionar: "Fernando", "RoBertO", "gabriEla", etc.
 */
 console.log( '\nNome com letras intercaladas entre caixa alta e baixa:' );
 // ?
+})();
