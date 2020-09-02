@@ -1,3 +1,5 @@
+(function() {
+'use strict';
 /*
 1. Envolva todo o conteúdo desse desafio em uma IIFE.
 2. Adicione a diretiva 'use strict';
@@ -14,17 +16,30 @@ eles! Use um console.log para cada CPF.
 - "735 500 794 - 22"
 - "101.123-131x32"
 */
-console.log( 'Limpando CPFs:' );
-// ?
-
+> console.log( 'Limpando CPFs:' );
+> var cpf = ['049-214 3421-1', '210.458.522-05', '735 500 794 - 22', '101.123-131x32'];
+> var regCharInd = /[^\d]/g;
+> var cpfCleaned = [];
+> cpf.forEach(function cleanCPF (numCpf) {
+... cpfCleaned.push(numCpf.replace(regCharInd, ''));
+... return cpfCleaned;
+... });
+> console.log(cpfCleaned);
+  
 /*
 Usando os CPFs limpos acima, deixe-os com a formatação correta de CPF.
 Ex.: "999.999.999-99"
 Mostre o resultado no console.
 */
-console.log( '\nFormatando CPFs corretamente:' );
-// ?
-
+> console.log( '\nFormatando CPFs corretamente:' );
+> var regFiltroCpf = /(\d{3})(\d{3})(\d{3})(\d{2})/g;
+> var cpfFormated = [];
+> cpfCleaned.forEach (function formatCPF (numCpfClean) {
+... cpfFormated.push(numCpfClean.replace(regFiltroCpf, '$1.$2.3$-$4'));
+... return cpfFormated;
+... });
+> console.log(cpfFormated);
+  
 /*
 Crie uma expressão regular que faça match com as palavras "junho" ou "julho",
 usando o mínimo de caracteres possíveis na regex.
@@ -36,8 +51,10 @@ Mostre no console o resultado do match para a frase:
 O resultado deve ser:
 ["junho", "julho"]
 */
-console.log( '\nMatch com as palavras "junho" ou "julho" para a frase "Os meses de janeiro, junho e julho começam com a letra j.":' );
-// ?
+> console.log( '\nMatch com as palavras "junho" ou "julho" para a frase "Os meses de janeiro, junho e julho começam com a letra j.":' );
+> var text = 'Os meses de janeiro, junho e julho começam com a letra j.'
+> var regMes = /ju[nl]ho/gi;
+> console.log(text.match(regMes));
 
 /*
 Crie uma expressão regular que faça o match com a abertura de uma tag
@@ -48,8 +65,10 @@ Use o método match e faça o teste com a marcação abaixo:
 O resultado deve ser:
 ["<div>", "<section>", "<blockquote>"]
 */
-console.log( '\nMatch com a abertura de uma tag HTML:' );
-// ?
+> console.log( '\nMatch com a abertura de uma tag HTML:' );
+> var textHtml = '<div><section><blockquote>Texto <img /></blockquote></section></div>';
+> var regHtml = /<\w+>/gi;
+> console.log(textHtml.match(regHtml));
 
 /*
 Crie uma expressão regular que faça o match com uma tag HTML vazia, casando
@@ -60,8 +79,10 @@ Use o método match e faça o teste com a marcação abaixo:
 O resultado deve ser:
 ["<li></li>", "<li></li>", "<span></span>"]
 */
-console.log( '\nMatch com tags HTML vazias (abertura e fechamento da tag):' );
-// ?
+> console.log( '\nMatch com tags HTML vazias (abertura e fechamento da tag):' );
+> var textHtml2 = '<div><ul><li></li><li></li><li><span></span></li></ul></div>'
+> var regHtml2 = /<\w+><\/\w+>/gi;
+> console.log(textHtml2.match(regHtml2));
 
 /*
 Vamos complicar um pouco agora :D
@@ -85,5 +106,6 @@ Uma dica: faça o match aos poucos. Para facilitar o teste, use o site
 https://regex101.com/#javascript e verifique se as capturas estão
 corretas, para depois aplicar no código ;)
 */
-console.log( '\nFazer replace dos textos das tags:' );
+> console.log( '\nFazer replace dos textos das tags:' );
 // ?
+})();  
