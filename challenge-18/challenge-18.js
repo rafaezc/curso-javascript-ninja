@@ -108,7 +108,7 @@
   */
   > var textEsp = '<h1>Título da página</h1><p>Este é um parágrafo</p><footer>Rodapé</footer>';
   > var regEsp =  /(<\w+>)(.+?)(<\/\w+>)/g;
-  > textEsp1 = textEsp.replace(regEsp, '\nO texto dentro da tag $1 é $2');
+  > textEsp1 = textEsp.replace(regEsp, '\nO texto dentro da tag $1 é $2.');
   > console.log(textEsp1);
   
 })();  
