@@ -15,7 +15,6 @@
   > for(i = 1; i <= 10; i++) {
   ... numberObjects.push({number: i})
   ... }
-
   > console.log(numberObjects);
 
   /*
