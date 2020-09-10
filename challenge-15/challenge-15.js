@@ -22,21 +22,21 @@
     adicionados à idade original (age). Esse método deverá retornar o objeto
     que será instanciado.
   */
-  > function Person (name, lastName, age) {
-  ... this.name = name;
-  ... this.lastName = lastName;
-  ... this.age = age;
-  ... this.getFullName = function getFullName() {
-  ..... return this.name + ' ' + this.lastName;
-  ..... };
-  ... this.getAge = function getAge() {
-  ..... return this.age;
-  ..... };
-  ... this.addAge = function addAge(){
-  ..... this.age += arguments[0];
-  ..... return this;
-  ..... };
-  ... }
+  function Person (name, lastName, age) {
+  this.name = name;
+  this.lastName = lastName;
+  this.age = age;
+  this.getFullName = function getFullName() {
+  return this.name + ' ' + this.lastName;
+  };
+  this.getAge = function getAge() {
+  return this.age;
+  };
+  this.addAge = function addAge(){
+  this.age += arguments[0];
+  return this;
+  };
+  }
 
   /*
   Crie 3 novos objetos usando o construtor acima. Os objetos serão novas
@@ -44,27 +44,27 @@
   parâmetros corretamente para o construtor para criar as novas pessoas.
   Mostre as 3 novas pessoas criadas no console (Um console.log por pessoa).
   */
-  > console.log( 'Novas pessoas criadas à partir de Person:' );
-  > var lucas = new Person ('Lucas', 'Fontes', 35);
-  > var fabio = new Person ('Fabio', 'Fernandes', 28);
-  > var camila = new Person ('Camila', 'Solentini', 23);
+  console.log( 'Novas pessoas criadas à partir de Person:' );
+  var lucas = new Person ('Lucas', 'Fontes', 35);
+  var fabio = new Person ('Fabio', 'Fernandes', 28);
+  var camila = new Person ('Camila', 'Solentini', 23);
 
   /*
   Mostre no console o nome completo de cada pessoa.
   */
-  > console.log( '\nNomes das pessoas:' );
-  > console.log(lucas.getFullName()); //Lucas Fontes
-  > console.log(fabio.getFullName()); //Fabio Fernandes
-  > console.log(camila.getFullName()); //Camila Solentini
+  console.log( '\nNomes das pessoas:' );
+  console.log(lucas.getFullName()); //Lucas Fontes
+  console.log(fabio.getFullName()); //Fabio Fernandes
+  console.log(camila.getFullName()); //Camila Solentini
 
   /*
   Mostre no console as idades de cada pessoa, com a frase:
   - "[NOME COMPLETO] tem [IDADE] anos."
   */
-  > console.log( '\nIdade das pessoas:' );
-  > console.log(lucas.getFullName() + ' tem ' + lucas.getAge() + ' anos.' ); //Lucas Fontes tem 35 anos.
-  > console.log(fabio.getFullName() + ' tem ' + fabio.getAge() + ' anos.' ); //Fabio Fernandes tem 28 anos.
-  > console.log(camila.getFullName() + ' tem ' + camila.getAge() + ' anos.' ); //Camila Solentini tem 23 anos.
+  console.log( '\nIdade das pessoas:' );
+  console.log(lucas.getFullName() + ' tem ' + lucas.getAge() + ' anos.' ); //Lucas Fontes tem 35 anos.
+  console.log(fabio.getFullName() + ' tem ' + fabio.getAge() + ' anos.' ); //Fabio Fernandes tem 28 anos.
+  console.log(camila.getFullName() + ' tem ' + camila.getAge() + ' anos.' ); //Camila Solentini tem 23 anos.
 
   /*
   Adicione alguns anos à cada pessoa, e mostre no console a nova idade de
@@ -72,7 +72,7 @@
   - "[NOME COMPLETO] agora tem [NOVA IDADE] anos."
   */
   console.log( '\nNova idade das pessoas:' );
-  > console.log(lucas.getFullName() + ' agora tem ' + lucas.addAge(-4).getAge() + ' anos.' ); //Lucas Fontes agora tem 31 anos.
-  > console.log(fabio.getFullName() + ' agora tem ' + fabio.addAge(3).getAge() + ' anos.' ); //Fabio Fernandes agora tem 31 anos.
-  > console.log(camila.getFullName() + ' agora tem ' + camila.addAge(2).getAge() + ' anos.' ); //Camila Solentini agora tem 25 anos.
+  console.log(lucas.getFullName() + ' agora tem ' + lucas.addAge(-4).getAge() + ' anos.' ); //Lucas Fontes agora tem 31 anos.
+  console.log(fabio.getFullName() + ' agora tem ' + fabio.addAge(3).getAge() + ' anos.' ); //Fabio Fernandes agora tem 31 anos.
+  console.log(camila.getFullName() + ' agora tem ' + camila.addAge(2).getAge() + ' anos.' ); //Camila Solentini agora tem 25 anos.
 })();
